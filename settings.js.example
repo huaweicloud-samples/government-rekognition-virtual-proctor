@@ -1,0 +1,15 @@
+// settings.js — 前端运行时配置模板（范本，非部署产物）
+//
+// 用法：
+//   本文件为部署时使用的运行时配置范本，不随源码提交真实值。
+//   部署时复制为 settings.js 并填入真实 APIG 调用地址，再上传到 OBS 静态桶根目录。
+//   前端 index.html 通过 <script src="/settings.js"> 在运行时加载本文件，
+//   并由 src/frontend/src/utils/request.js 读取 window.proctorSettings.apiEndpoint。
+//
+// 注意：必须定义全局变量 window.proctorSettings（不是 window.settings）。
+
+window.proctorSettings = {
+  // APIG / FunctionGraph 调用地址的公开前缀，对应 /proctor 与 /auth/login 的公共部分。
+  // 例：https://xxx.apig.cn-north-4.myhuaweicloud.com/v1/abcdef/proctor
+  apiEndpoint: "https://<APIG-域名>/<分组路径>",
+};
